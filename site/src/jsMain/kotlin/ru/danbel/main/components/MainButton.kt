@@ -1,6 +1,6 @@
 package ru.danbel.main.components
 
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.css.borderColor
 import org.jetbrains.compose.web.css.*
@@ -23,6 +23,7 @@ fun MainButton(
                 cursor(Cursor.Pointer.toString())
                 color(primaryText)
                 borderColor(tintColor)
+                fontSize(14.px)
             }
             onClick { onClick() }
         }

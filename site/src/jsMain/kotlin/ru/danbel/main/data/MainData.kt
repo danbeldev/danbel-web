@@ -26,37 +26,7 @@ private val pgkLinkData = listOf(
     )
 )
 
-private val servicesLinkData = listOf(
-    LinkData(
-        text = "Mail",
-        link = "https://mail.danbel.ru:30"
-    ),
-    LinkData(
-        text = "Plex",
-        link = "https://plex.danbel.ru:30"
-    ),
-    LinkData(
-        text = "PgAdmin",
-        link = "https://pgadmin.danbel.ru:30"
-    ),
-
-    LinkData(
-        text = "Jenkins",
-        link = "https://jenkins.danbel.ru:30"
-    ),
-    LinkData(
-        text = "Gitea",
-        link = "https://git.danbel.ru:30"
-    ),
-    LinkData(
-        text = "TpLink",
-        link = "https://tp.danbel.ru:30"
-    ),
-    LinkData(
-        text = "Torrent",
-        link = "https://torrent.danbel.ru:30"
-    )
-).sortedBy { it.text }
+private val servicesLinkData = listOf<LinkData>()
 
 private val apiLinkData = listOf(
     LinkData(
@@ -69,9 +39,30 @@ private val apiLinkData = listOf(
     ),
 )
 
+val aliceKtxLinkData = listOf(
+    LinkData(
+        text = "GitHub Source",
+        link = "https://github.com/danbeldev/alice-ktx"
+    ),
+    LinkData(
+        text = "Habr",
+        link = "https://habr.com/ru/articles/834264/"
+    ),
+    LinkData(
+        text = "Maven Repository",
+        link = "https://central.sonatype.com/artifact/io.github.danbeldev/alice-ktx"
+    )
+)
+
+
 val allData = listOf(
     BaseData(
-        title = "ПГК",
+        title = "Alice-ktx",
+        links = aliceKtxLinkData,
+        icon = "/alice_logo.png"
+    ),
+    BaseData(
+        title = "PGK College",
         links = pgkLinkData,
         icon = "/college.png"
     ),

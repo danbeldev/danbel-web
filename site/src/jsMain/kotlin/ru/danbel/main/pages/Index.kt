@@ -52,7 +52,7 @@ fun HomePage() {
                 }
             }
         ) {
-            Text("DanBel - Данила Беляков")
+            Text("DanBel - danbeldev")
         }
 
         Column(
@@ -60,50 +60,52 @@ fun HomePage() {
             verticalArrangement = Arrangement.spacedBy(10.px)
         ) {
             allData.forEach { item ->
-                Column(
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Div(attrs = { style { height(8.px) } })
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier.padding(right = 16.px)
+                if (item.links.isNotEmpty()) {
+                    Column(
+                        modifier = Modifier.fillMaxWidth()
                     ) {
-                        item.icon?.let { icon ->
-                            Img(src = icon, attrs = {
-                                style {
-                                    width(35.px)
-                                }
-                            })
-                            Div(attrs = { style { width(8.px) } })
-                        }
-
-                        P(
-                            attrs = {
-                                style {
-                                    color(primaryText)
-                                    fontWeight("700")
-                                    fontFamily("FontFamily")
-                                    fontSize(20.px)
-                                }
-                            }
+                        Div(attrs = { style { height(8.px) } })
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.padding(right = 16.px)
                         ) {
-                            Text(item.title)
-                        }
-                    }
+                            item.icon?.let { icon ->
+                                Img(src = icon, attrs = {
+                                    style {
+                                        width(35.px)
+                                    }
+                                })
+                                Div(attrs = { style { width(8.px) } })
+                            }
 
-                    Divider()
-
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(8.px)
-                    ) {
-                        item.links.forEach { linkData ->
-                            MainButton(
-                                text = linkData.text,
-                                onClick = {
-                                    openLinkInBrowser(linkData.link)
+                            P(
+                                attrs = {
+                                    style {
+                                        color(primaryText)
+                                        fontWeight("700")
+                                        fontFamily("FontFamily")
+                                        fontSize(20.px)
+                                    }
                                 }
-                            )
+                            ) {
+                                Text(item.title)
+                            }
+                        }
+
+                        Divider()
+
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.spacedBy(8.px)
+                        ) {
+                            item.links.forEach { linkData ->
+                                MainButton(
+                                    text = linkData.text,
+                                    onClick = {
+                                        openLinkInBrowser(linkData.link)
+                                    }
+                                )
+                            }
                         }
                     }
                 }
